@@ -1,0 +1,82 @@
+---
+const projects = [
+  {
+    title: "Plataforma E-commerce B2B",
+    challenge: "El cliente necesitaba una plataforma rápida para procesar miles de pedidos mayoristas sin caídas de rendimiento.",
+    solution: "Desarrollo de un frontend ultra-rápido con Astro y React, conectado a una API robusta en PHP contenerizada con Docker.",
+    tags: ["Astro", "React", "Docker", "PHP"],
+    link: "#"
+  },
+  {
+    title: "App de Gestión de Inventario",
+    challenge: "Optimizar el registro de entrada y salida de productos en múltiples almacenes desde dispositivos móviles.",
+    solution: "Creación de una app cross-platform con Flutter que funciona offline y sincroniza datos automáticamente.",
+    tags: ["Flutter", "Firebase", "UX/UI"],
+    link: "#"
+  },
+  {
+    title: "Sitio Web Corporativo + Hosting",
+    challenge: "Una firma de abogados necesitaba modernizar su presencia digital sin lidiar con temas técnicos de servidores.",
+    solution: "Paquete All-in-One: Diseño limpio, desarrollo rápido y configuración de hosting/dominio transparente para el cliente.",
+    tags: ["Web", "Hosting", "Llave en mano"],
+    link: "#"
+  }
+];
+---
+<section id="portafolio" class="py-24 border-t border-gray-900 bg-gray-950/50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Casos de éxito y proyectos recientes.
+      </h2>
+      <p class="text-gray-400 text-lg max-w-2xl">
+        Soluciones reales para problemas de negocio reales.
+      </p>
+    </div>
+
+    <div class="space-y-24">
+      {projects.map((project, index) => (
+        <div class={`flex flex-col gap-12 lg:items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
+          <!-- Imagen Mockup -->
+          <div class="w-full lg:w-1/2">
+            <div class="aspect-[4/3] rounded-2xl bg-gray-900 border border-gray-800 overflow-hidden flex items-center justify-center relative group">
+              <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <span class="text-gray-600 font-medium">Visual del Proyecto {index + 1}</span>
+            </div>
+          </div>
+          
+          <!-- Contenido -->
+          <div class="w-full lg:w-1/2 flex flex-col justify-center">
+            <h3 class="text-2xl font-bold text-white mb-6">{project.title}</h3>
+            
+            <div class="space-y-4 mb-8 text-gray-400">
+              <p>
+                <strong class="text-gray-300">El Reto:</strong> {project.challenge}
+              </p>
+              <p>
+                <strong class="text-gray-300">La Solución:</strong> {project.solution}
+              </p>
+            </div>
+            
+            <div class="flex flex-wrap gap-2 mb-8">
+              {project.tags.map(tag => (
+                <span class="px-3 py-1 text-xs font-medium rounded-full bg-gray-800 text-gray-300 border border-gray-700">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            
+            <div>
+              <a href={project.link} class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors">
+                Ver detalles
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
