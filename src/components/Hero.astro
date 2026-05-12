@@ -1,15 +1,40 @@
 ---
 import NetworkParticles from './NetworkParticles.jsx';
 ---
-<section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+<section class="relative pt-6 pb-20 lg:pt-8 lg:pb-32 overflow-hidden">
   <!-- Componente de red neuronal/partículas de fondo -->
   <NetworkParticles client:idle />
   
   <!-- Sutil gradiente de fondo -->
-  <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(37,99,235,0.15),rgba(255,255,255,0))]"></div>
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(37,99,235,0.28),rgba(2,6,23,0))]"></div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-slate-950 via-slate-950 to-blue-950/70"></div>
+  <div class="absolute left-8 top-14 h-20 w-52 rounded-full bg-cyan-400/20 blur-2xl -z-10"></div>
   
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="max-w-3xl">
+    <nav class="flex items-center justify-between rounded-2xl border border-blue-900/40 bg-slate-950/35 px-4 py-3 backdrop-blur-sm">
+      <a href="#inicio" class="inline-flex items-center">
+        <img
+          src="/logo.png"
+          alt="RexCoreSolutions"
+          class="h-12 w-auto sm:h-14 lg:h-16 object-contain drop-shadow-[0_0_12px_rgba(56,189,248,0.45)]"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+
+      <div class="hidden md:flex items-center gap-7 text-sm text-gray-300">
+        <a href="#servicios" class="hover:text-cyan-300 transition-colors duration-200">Servicios</a>
+        <a href="#about" class="hover:text-cyan-300 transition-colors duration-200">Sobre mi</a>
+        <a href="#contacto" class="hover:text-cyan-300 transition-colors duration-200">Contacto</a>
+      </div>
+
+      <a href="#contacto" class="hidden sm:inline-flex items-center rounded-lg bg-blue-600/90 px-4 py-2 text-sm font-medium text-white hover:bg-blue-500 transition-colors duration-200">
+        Agendar llamada
+      </a>
+    </nav>
+
+    <div id="inicio" class="max-w-3xl pt-12 lg:pt-16">
+
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-900/50 border border-gray-800 text-sm text-gray-300 mb-8">
         <span class="relative flex h-2 w-2">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
