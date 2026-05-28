@@ -1,82 +1,553 @@
 ---
-const projects = [
-  {
-    title: "Plataforma E-commerce B2B",
-    challenge: "El cliente necesitaba una plataforma rápida para procesar miles de pedidos mayoristas sin caídas de rendimiento.",
-    solution: "Desarrollo de un frontend ultra-rápido con Astro y React, conectado a una API robusta en PHP contenerizada con Docker.",
-    tags: ["Astro", "React", "Docker", "PHP"],
-    link: "#"
-  },
-  {
-    title: "App de Gestión de Inventario",
-    challenge: "Optimizar el registro de entrada y salida de productos en múltiples almacenes desde dispositivos móviles.",
-    solution: "Creación de una app cross-platform con Flutter que funciona offline y sincroniza datos automáticamente.",
-    tags: ["Flutter", "Firebase", "UX/UI"],
-    link: "#"
-  },
-  {
-    title: "Sitio Web Corporativo + Hosting",
-    challenge: "Una firma de abogados necesitaba modernizar su presencia digital sin lidiar con temas técnicos de servidores.",
-    solution: "Paquete All-in-One: Diseño limpio, desarrollo rápido y configuración de hosting/dominio transparente para el cliente.",
-    tags: ["Web", "Hosting", "Llave en mano"],
-    link: "#"
-  }
-];
+import proyectoPos from '../images/proyecto-pos.jpg';
+import proyectoGym from '../images/proyecto-gym.jpg';
+import proyectoWeb from '../images/proyecto-web.jpg';
+import proyectoDashboard from '../images/proyecto-dashboard.jpg';
+import proyectoApp from '../images/proyecto-app.jpeg';
+import proyectoCloud from '../images/proyecto-cloud.jpg';
 ---
-<section id="portafolio" class="py-24 border-t border-gray-900 bg-gray-950/50">
+
+<!-- GALERÍA 3D INTERACTIVA PREMIUM -->
+<section id="galeria-giratoria" class="py-24 border-t border-gray-900 bg-black overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-        Casos de éxito y proyectos recientes.
+
+    <div class="text-center mb-14">
+      <span class="text-blue-400 uppercase tracking-widest text-sm font-semibold">
+        Portafolio
+      </span>
+
+      <h2 class="text-3xl md:text-5xl font-bold text-white mt-4 mb-6">
+        Explora nuestros proyectos
       </h2>
-      <p class="text-gray-400 text-lg max-w-2xl">
-        Soluciones reales para problemas de negocio reales.
+
+      <p class="text-gray-400 text-lg max-w-3xl mx-auto">
+        Arrastra para girar la galería y presiona una tarjeta para ver más información.
       </p>
     </div>
 
-    <div class="space-y-24">
-      {projects.map((project, index) => (
-        <div class={`flex flex-col gap-12 lg:items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
-          <!-- Imagen Mockup -->
-          <div class="w-full lg:w-1/2">
-            <div class="aspect-[4/3] rounded-2xl bg-gray-900 border border-gray-800 overflow-hidden flex items-center justify-center relative group">
-              <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <span class="text-gray-600 font-medium">Visual del Proyecto {index + 1}</span>
-            </div>
+    <div class="carousel-stage" id="carouselStage">
+      <div class="carousel-3d" id="carousel3d">
+
+        <article class="project-card" style="--i:0;" data-title="Sistema Punto de Venta" data-category="Punto de Venta" data-description="Sistema diseñado para negocios que necesitan controlar ventas, inventario, tickets, cortes de caja, clientes y reportes en tiempo real desde una plataforma moderna." data-features="Ventas rápidas|Control de inventario|Tickets y cortes de caja|Reportes administrativos">
+          <img src={proyectoPos.src} alt="Sistema Punto de Venta" loading="lazy" decoding="async" />
+          <div class="project-overlay">
+            <span>Punto de Venta</span>
+            <h3>Sistema POS</h3>
+            <p>Ventas, inventario y reportes.</p>
           </div>
-          
-          <!-- Contenido -->
-          <div class="w-full lg:w-1/2 flex flex-col justify-center">
-            <h3 class="text-2xl font-bold text-white mb-6">{project.title}</h3>
-            
-            <div class="space-y-4 mb-8 text-gray-400">
-              <p>
-                <strong class="text-gray-300">El Reto:</strong> {project.challenge}
-              </p>
-              <p>
-                <strong class="text-gray-300">La Solución:</strong> {project.solution}
-              </p>
-            </div>
-            
-            <div class="flex flex-wrap gap-2 mb-8">
-              {project.tags.map(tag => (
-                <span class="px-3 py-1 text-xs font-medium rounded-full bg-gray-800 text-gray-300 border border-gray-700">
-                  {tag}
-                </span>
-              ))}
-            </div>
-            
-            <div>
-              <a href={project.link} class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors">
-                Ver detalles
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
-            </div>
+        </article>
+
+        <article class="project-card" style="--i:1;" data-title="Sistema de Administración para Gimnasios" data-category="Fitness Tech" data-description="Plataforma para administrar gimnasios con control de membresías, pagos, usuarios, accesos y seguimiento de clientes desde un panel fácil de usar." data-features="Membresías|Control de pagos|Accesos|Panel administrativo">
+          <img src={proyectoGym.src} alt="Sistema de gimnasio" loading="lazy" decoding="async" />
+          <div class="project-overlay">
+            <span>Fitness</span>
+            <h3>Gym Manager</h3>
+            <p>Membresías, pagos y accesos.</p>
           </div>
-        </div>
-      ))}
+        </article>
+
+        <article class="project-card" style="--i:2;" data-title="Páginas Web Profesionales" data-category="Desarrollo Web" data-description="Diseño y desarrollo de páginas web modernas, responsivas y optimizadas para negocios, emprendimientos y marcas que buscan presencia digital profesional." data-features="Diseño responsivo|SEO básico|Hosting y dominio|Landing pages">
+          <img src={proyectoWeb.src} alt="Desarrollo web" loading="lazy" decoding="async" />
+          <div class="project-overlay">
+            <span>Web</span>
+            <h3>Landing Pages</h3>
+            <p>Sitios modernos y responsivos.</p>
+          </div>
+        </article>
+
+        <article class="project-card" style="--i:3;" data-title="Dashboards Administrativos" data-category="Analytics" data-description="Paneles administrativos para visualizar métricas, ventas, clientes, operaciones y reportes importantes para la toma de decisiones." data-features="Indicadores KPI|Reportes visuales|Filtros dinámicos|Control empresarial">
+          <img src={proyectoDashboard.src} alt="Dashboard administrativo" loading="lazy" decoding="async" />
+          <div class="project-overlay">
+            <span>Dashboard</span>
+            <h3>Analytics</h3>
+            <p>Métricas y control empresarial.</p>
+          </div>
+        </article>
+
+        <article class="project-card project-card-mobile" style="--i:4;" data-title="Aplicaciones Móviles" data-category="Mobile Apps" data-description="Desarrollo de aplicaciones móviles para Android y iOS conectadas a los procesos principales del negocio, con una experiencia moderna y fluida." data-features="Android e iOS|Diseño moderno|Notificaciones|Conexión con sistemas">
+          <div class="phone-preview">
+            <img src={proyectoApp.src} alt="Aplicación móvil" loading="lazy" decoding="async" />
+          </div>
+
+          <div class="project-overlay">
+            <span>Apps</span>
+            <h3>Mobile Apps</h3>
+            <p>Aplicaciones para tu negocio.</p>
+          </div>
+        </article>
+
+        <article class="project-card" style="--i:5;" data-title="Infraestructura Cloud" data-category="Cloud & Hosting" data-description="Implementación de hosting, servidores, dominios, respaldos y despliegues seguros para mantener tus sistemas funcionando correctamente." data-features="Hosting seguro|Dominios|Respaldos|Despliegues en producción">
+          <img src={proyectoCloud.src} alt="Infraestructura cloud" loading="lazy" decoding="async" />
+          <div class="project-overlay">
+            <span>Cloud</span>
+            <h3>Infraestructura</h3>
+            <p>Hosting, servidores y respaldos.</p>
+          </div>
+        </article>
+
+      </div>
     </div>
+
   </div>
 </section>
+
+<!-- MODAL INFO -->
+<div class="project-modal" id="projectModal">
+  <div class="project-modal-backdrop"></div>
+
+  <div class="project-modal-content">
+    <button class="project-modal-close" id="projectModalClose" type="button">×</button>
+
+    <span id="modalCategory"></span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDescription"></p>
+
+    <div class="modal-features" id="modalFeatures"></div>
+  </div>
+</div>
+
+<style>
+  #galeria-giratoria {
+    background:
+      radial-gradient(circle at center, rgba(37,99,235,.18), transparent 38%),
+      linear-gradient(180deg, #000 0%, #020617 100%);
+  }
+
+  .carousel-stage {
+    position: relative;
+    height: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1700px;
+    overflow: hidden;
+    cursor: grab;
+    user-select: none;
+    touch-action: pan-y;
+  }
+
+  .carousel-stage:active {
+    cursor: grabbing;
+  }
+
+  .carousel-3d {
+    position: relative;
+    width: 370px;
+    height: 440px;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  .project-card {
+    position: absolute;
+    inset: 0;
+    border-radius: 32px;
+    overflow: hidden;
+    background: #020617;
+    border: 1px solid rgba(96,165,250,.22);
+    box-shadow:
+      0 30px 90px rgba(0,0,0,.72),
+      inset 0 0 0 1px rgba(255,255,255,.04);
+    transform: rotateY(calc(var(--i) * 60deg)) translateZ(440px);
+    backface-visibility: hidden;
+    cursor: pointer;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #020617;
+    padding: 8px;
+    opacity: 1;
+    pointer-events: auto;
+    user-select: none;
+    image-rendering: auto;
+    transform: translateZ(0);
+    filter: contrast(1.05) saturate(1.08) brightness(1.04);
+  }
+
+  .project-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,.25), transparent 62%);
+    pointer-events: none;
+  }
+
+  .project-overlay {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .project-overlay span {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  .project-overlay h3 {
+    color: white;
+    font-size: 29px;
+    font-weight: 950;
+    margin-top: 8px;
+  }
+
+  .project-overlay p {
+    color: #d1d5db;
+    font-size: 14px;
+    margin-top: 7px;
+  }
+
+  .project-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    place-items: center;
+    padding: 24px;
+  }
+
+  .project-modal.active {
+    display: grid;
+  }
+
+  .project-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.76);
+    backdrop-filter: blur(12px);
+  }
+
+  .project-modal-content {
+    position: relative;
+    width: min(560px, 100%);
+    border-radius: 28px;
+    background: linear-gradient(180deg, rgba(15,23,42,.98), rgba(2,6,23,.98));
+    border: 1px solid rgba(96,165,250,.28);
+    box-shadow: 0 30px 90px rgba(0,0,0,.75);
+    padding: 34px;
+    animation: modalIn .25s ease;
+  }
+
+  .project-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(255,255,255,.06);
+    color: white;
+    font-size: 26px;
+    line-height: 1;
+  }
+
+  #modalCategory {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+  }
+
+  #modalTitle {
+    color: white;
+    font-size: 32px;
+    font-weight: 900;
+    margin-top: 12px;
+  }
+
+  #modalDescription {
+    color: #cbd5e1;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-top: 14px;
+  }
+
+  .modal-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .modal-features span {
+    color: #bfdbfe;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 9px 13px;
+    border-radius: 999px;
+    background: rgba(37,99,235,.14);
+    border: 1px solid rgba(96,165,250,.22);
+  }
+
+  .project-card-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .phone-preview {
+    position: relative;
+    width: 56%;
+    height: 76%;
+    border-radius: 38px;
+    padding: 9px;
+    background: linear-gradient(180deg, #1e293b 0%, #020617 100%);
+    border: 1px solid rgba(255,255,255,.16);
+    box-shadow:
+      0 30px 80px rgba(0,0,0,.55),
+      0 0 0 2px rgba(255,255,255,.04),
+      inset 0 0 12px rgba(255,255,255,.04);
+    overflow: hidden;
+    z-index: 1;
+    margin-bottom: 56px;
+    transform: perspective(900px) rotateY(-8deg) rotateX(2deg);
+    transition: all .4s ease;
+  }
+
+  .project-card:hover .phone-preview {
+    transform: perspective(900px) rotateY(0deg) rotateX(0deg) scale(1.03);
+  }
+
+  .phone-preview::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 34%;
+    height: 14px;
+    border-radius: 20px;
+    background: rgba(0,0,0,.75);
+    z-index: 5;
+  }
+
+  .phone-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
+    border-radius: 30px;
+  }
+
+  @keyframes modalIn {
+    from {
+      opacity: 0;
+      transform: translateY(18px) scale(.96);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    #galeria-giratoria {
+      padding-top: 72px;
+      padding-bottom: 72px;
+    }
+
+    .carousel-stage {
+      height: 465px;
+      perspective: 1100px;
+      overflow: visible;
+    }
+
+    .carousel-3d {
+      width: 250px;
+      height: 335px;
+    }
+
+    .project-card {
+      border-radius: 24px;
+      transform: rotateY(calc(var(--i) * 60deg)) translateZ(285px);
+    }
+
+    .project-card img {
+      padding: 6px;
+    }
+
+    .project-overlay {
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+    }
+
+    .project-overlay h3 {
+      font-size: 21px;
+    }
+
+    .project-overlay p {
+      font-size: 13px;
+    }
+
+    .project-modal-content {
+      padding: 28px 22px;
+      border-radius: 24px;
+    }
+
+    #modalTitle {
+      font-size: 25px;
+    }
+
+    #modalDescription {
+      font-size: 15px;
+    }
+
+    .phone-preview {
+      width: 62%;
+      height: 74%;
+      border-radius: 26px;
+      margin-bottom: 48px;
+    }
+
+    .phone-preview img {
+      border-radius: 20px;
+    }
+  }
+</style>
+
+<script is:inline>
+  const stage = document.getElementById("carouselStage");
+  const carousel = document.getElementById("carousel3d");
+  const modal = document.getElementById("projectModal");
+
+  const modalClose = document.getElementById("projectModalClose");
+  const modalCategory = document.getElementById("modalCategory");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDescription = document.getElementById("modalDescription");
+  const modalFeatures = document.getElementById("modalFeatures");
+
+  let rotation = 0;
+  let velocity = -0.018;
+  let isDragging = false;
+  let hasMoved = false;
+  let startX = 0;
+  let lastX = 0;
+  let lastTime = 0;
+  let pressedCard = null;
+
+  function animate() {
+    if (!isDragging) {
+      rotation += velocity;
+      velocity *= 0.985;
+
+      if (Math.abs(velocity) < 0.014) {
+        velocity = velocity < 0 ? -0.014 : 0.014;
+      }
+    }
+
+    carousel.style.transform = `rotateY(${rotation}deg)`;
+    requestAnimationFrame(animate);
+  }
+
+  function openModal(card) {
+    modalCategory.textContent = card.dataset.category || "";
+    modalTitle.textContent = card.dataset.title || "";
+    modalDescription.textContent = card.dataset.description || "";
+    modalFeatures.innerHTML = "";
+
+    const features = card.dataset.features || "";
+
+    features.split("|").forEach((item) => {
+      if (!item.trim()) return;
+
+      const span = document.createElement("span");
+      span.textContent = item.trim();
+      modalFeatures.appendChild(span);
+    });
+
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  if (stage && carousel && modal) {
+    stage.addEventListener("pointerdown", (e) => {
+      isDragging = true;
+      hasMoved = false;
+      pressedCard = e.target.closest(".project-card");
+
+      startX = e.clientX;
+      lastX = e.clientX;
+      lastTime = performance.now();
+      velocity = 0;
+
+      stage.setPointerCapture(e.pointerId);
+    });
+
+    stage.addEventListener("pointermove", (e) => {
+      if (!isDragging) return;
+
+      const now = performance.now();
+      const deltaX = e.clientX - lastX;
+      const deltaTotal = Math.abs(e.clientX - startX);
+      const deltaTime = Math.max(now - lastTime, 16);
+
+      if (deltaTotal > 8) {
+        hasMoved = true;
+      }
+
+      rotation += deltaX * 0.18;
+      velocity = (deltaX / deltaTime) * 3.5;
+
+      lastX = e.clientX;
+      lastTime = now;
+    });
+
+    stage.addEventListener("pointerup", (e) => {
+      if (!isDragging) return;
+
+      isDragging = false;
+
+      if (Math.abs(velocity) > 0.7) {
+        velocity = velocity > 0 ? 0.7 : -0.7;
+      }
+
+      stage.releasePointerCapture?.(e.pointerId);
+
+      if (!hasMoved && pressedCard) {
+        openModal(pressedCard);
+      }
+
+      pressedCard = null;
+    });
+
+    stage.addEventListener("pointercancel", () => {
+      isDragging = false;
+      pressedCard = null;
+    });
+
+    stage.addEventListener("pointerleave", () => {
+      isDragging = false;
+      pressedCard = null;
+    });
+
+    modalClose?.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", (e) => {
+      if (e.target.classList.contains("project-modal-backdrop")) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    });
+
+    animate();
+  }
+</script>
