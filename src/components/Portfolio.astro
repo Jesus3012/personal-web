@@ -2,12 +2,14 @@
 import proyectoPos from '../images/proyecto-pos.jpg';
 import proyectoGym from '../images/proyecto-gym.jpg';
 import proyectoWeb from '../images/proyecto-web.jpg';
+import proyectoWeb2 from '../images/proyecto-web-2.jpg';
+import proyectoWeb3 from '../images/proyecto-web-3.jpg';
+import proyectoWeb4 from '../images/proyecto-web-4.jpg';
 import proyectoDashboard from '../images/proyecto-dashboard.jpg';
 import proyectoApp from '../images/proyecto-app.jpeg';
 import proyectoCloud from '../images/proyecto-cloud.jpg';
 ---
 
-<!-- GALERÍA 3D INTERACTIVA PREMIUM -->
 <section id="galeria-giratoria" class="py-24 border-t border-gray-900 bg-black overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
 
@@ -28,7 +30,14 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
     <div class="carousel-stage" id="carouselStage">
       <div class="carousel-3d" id="carousel3d">
 
-        <article class="project-card" style="--i:0;" data-title="Sistema Punto de Venta" data-category="Punto de Venta" data-description="Sistema diseñado para negocios que necesitan controlar ventas, inventario, tickets, cortes de caja, clientes y reportes en tiempo real desde una plataforma moderna." data-features="Ventas rápidas|Control de inventario|Tickets y cortes de caja|Reportes administrativos">
+        <article
+          class="project-card"
+          style="--i:0;"
+          data-title="Sistema Punto de Venta"
+          data-category="Punto de Venta"
+          data-description="Sistema diseñado para negocios que necesitan controlar ventas, inventario, tickets, cortes de caja, clientes y reportes en tiempo real desde una plataforma moderna."
+          data-features="Ventas rápidas|Control de inventario|Tickets y cortes de caja|Reportes administrativos"
+        >
           <img src={proyectoPos.src} alt="Sistema Punto de Venta" loading="lazy" decoding="async" />
           <div class="project-overlay">
             <span>Punto de Venta</span>
@@ -37,7 +46,14 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
           </div>
         </article>
 
-        <article class="project-card" style="--i:1;" data-title="Sistema de Administración para Gimnasios" data-category="Fitness Tech" data-description="Plataforma para administrar gimnasios con control de membresías, pagos, usuarios, accesos y seguimiento de clientes desde un panel fácil de usar." data-features="Membresías|Control de pagos|Accesos|Panel administrativo">
+        <article
+          class="project-card"
+          style="--i:1;"
+          data-title="Sistema de Administración para Gimnasios"
+          data-category="Fitness Tech"
+          data-description="Plataforma para administrar gimnasios con control de membresías, pagos, usuarios, accesos y seguimiento de clientes desde un panel fácil de usar."
+          data-features="Membresías|Control de pagos|Accesos|Panel administrativo"
+        >
           <img src={proyectoGym.src} alt="Sistema de gimnasio" loading="lazy" decoding="async" />
           <div class="project-overlay">
             <span>Fitness</span>
@@ -46,8 +62,21 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
           </div>
         </article>
 
-        <article class="project-card" style="--i:2;" data-title="Páginas Web Profesionales" data-category="Desarrollo Web" data-description="Diseño y desarrollo de páginas web modernas, responsivas y optimizadas para negocios, emprendimientos y marcas que buscan presencia digital profesional." data-features="Diseño responsivo|SEO básico|Hosting y dominio|Landing pages">
-          <img src={proyectoWeb.src} alt="Desarrollo web" loading="lazy" decoding="async" />
+        <article
+          class="project-card"
+          style="--i:2;"
+          data-title="Páginas Web Profesionales"
+          data-category="Desarrollo Web"
+          data-description="Diseño y desarrollo de páginas web modernas, responsivas y optimizadas para negocios, emprendimientos y marcas que buscan presencia digital profesional."
+          data-features="Diseño responsivo|SEO básico|Hosting y dominio|Landing pages"
+          data-demo-url="https://wheat-gnat-631766.hostingersite.com/"
+        >
+          <div class="web-slider">
+            <img src={proyectoWeb.src} class="active" alt="Web 1" />
+            <img src={proyectoWeb2.src} alt="Web 2" />
+            <img src={proyectoWeb3.src} alt="Web 3" />
+            <!-- <img src={proyectoWeb4.src} alt="Web 4" /> -->
+          </div>
           <div class="project-overlay">
             <span>Web</span>
             <h3>Landing Pages</h3>
@@ -55,7 +84,14 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
           </div>
         </article>
 
-        <article class="project-card" style="--i:3;" data-title="Dashboards Administrativos" data-category="Analytics" data-description="Paneles administrativos para visualizar métricas, ventas, clientes, operaciones y reportes importantes para la toma de decisiones." data-features="Indicadores KPI|Reportes visuales|Filtros dinámicos|Control empresarial">
+        <article
+          class="project-card"
+          style="--i:3;"
+          data-title="Dashboards Administrativos"
+          data-category="Analytics"
+          data-description="Paneles administrativos para visualizar métricas, ventas, clientes, operaciones y reportes importantes para la toma de decisiones."
+          data-features="Indicadores KPI|Reportes visuales|Filtros dinámicos|Control empresarial"
+        >
           <img src={proyectoDashboard.src} alt="Dashboard administrativo" loading="lazy" decoding="async" />
           <div class="project-overlay">
             <span>Dashboard</span>
@@ -64,7 +100,14 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
           </div>
         </article>
 
-        <article class="project-card project-card-mobile" style="--i:4;" data-title="Aplicaciones Móviles" data-category="Mobile Apps" data-description="Desarrollo de aplicaciones móviles para Android y iOS conectadas a los procesos principales del negocio, con una experiencia moderna y fluida." data-features="Android e iOS|Diseño moderno|Notificaciones|Conexión con sistemas">
+        <article
+          class="project-card project-card-mobile"
+          style="--i:4;"
+          data-title="Aplicaciones Móviles"
+          data-category="Mobile Apps"
+          data-description="Desarrollo de aplicaciones móviles para Android y iOS conectadas a los procesos principales del negocio, con una experiencia moderna y fluida."
+          data-features="Android e iOS|Diseño moderno|Notificaciones|Conexión con sistemas"
+        >
           <div class="phone-preview">
             <img src={proyectoApp.src} alt="Aplicación móvil" loading="lazy" decoding="async" />
           </div>
@@ -76,7 +119,14 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
           </div>
         </article>
 
-        <article class="project-card" style="--i:5;" data-title="Infraestructura Cloud" data-category="Cloud & Hosting" data-description="Implementación de hosting, servidores, dominios, respaldos y despliegues seguros para mantener tus sistemas funcionando correctamente." data-features="Hosting seguro|Dominios|Respaldos|Despliegues en producción">
+        <article
+          class="project-card"
+          style="--i:5;"
+          data-title="Infraestructura Cloud"
+          data-category="Cloud & Hosting"
+          data-description="Implementación de hosting, servidores, dominios, respaldos y despliegues seguros para mantener tus sistemas funcionando correctamente."
+          data-features="Hosting seguro|Dominios|Respaldos|Despliegues en producción"
+        >
           <img src={proyectoCloud.src} alt="Infraestructura cloud" loading="lazy" decoding="async" />
           <div class="project-overlay">
             <span>Cloud</span>
@@ -91,7 +141,6 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
   </div>
 </section>
 
-<!-- MODAL INFO -->
 <div class="project-modal" id="projectModal">
   <div class="project-modal-backdrop"></div>
 
@@ -101,10 +150,13 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
     <span id="modalCategory"></span>
     <h3 id="modalTitle"></h3>
     <p id="modalDescription"></p>
+
     <a
-      href="https://wheat-gnat-631766.hostingersite.com/"
+      href="#"
       target="_blank"
+      rel="noopener noreferrer"
       class="demo-web-btn"
+      id="modalDemoBtn"
     >
       Ver Demo del Sitio Web
     </a>
@@ -253,6 +305,7 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
     color: white;
     font-size: 26px;
     line-height: 1;
+    cursor: pointer;
   }
 
   #modalCategory {
@@ -275,6 +328,33 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
     font-size: 16px;
     line-height: 1.7;
     margin-top: 14px;
+  }
+
+  .demo-web-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 24px 0 0;
+    padding: 16px 20px;
+    border-radius: 14px;
+    background: #2563eb;
+    color: #fff !important;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 800;
+    border: none;
+    box-shadow: 0 10px 25px rgba(37,99,235,.45);
+    transition: all .25s ease;
+  }
+
+  .demo-web-btn.active {
+    display: flex;
+  }
+
+  .demo-web-btn:hover {
+    background: #3b82f6;
+    transform: translateY(-2px);
   }
 
   .modal-features {
@@ -420,41 +500,32 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
     }
   }
 
-  .demo-web-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.web-slider {
+  position: absolute;
+  inset: 0;
+  background: #020617;
+  overflow: hidden;
+}
 
-  width: 100%;
-  margin: 24px 0;
-
-  padding: 16px 20px;
-
+.web-slider img {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  width: 88%;
+  height: 58%;
+  transform: translateX(-50%);
+  object-fit: contain;
+  object-position: center;
+  padding: 0;
+  background: transparent;
   border-radius: 14px;
-
-  background: #2563eb;
-  color: #fff !important;
-
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 700;
-
-  border: none;
-
-  box-shadow:
-    0 10px 25px rgba(37,99,235,.45);
-
-  transition: all .25s ease;
+  opacity: 0;
+  transition: opacity .8s ease;
+  filter: contrast(1.05) saturate(1.08) brightness(1.04);
 }
 
-.demo-web-btn:hover {
-  background: #3b82f6;
-  transform: translateY(-2px);
-}
-
-.demo-web-btn::before {
-  content: "";
-  margin-right: 10px;
+.web-slider img.active {
+  opacity: 1;
 }
 </style>
 
@@ -468,6 +539,7 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
   const modalTitle = document.getElementById("modalTitle");
   const modalDescription = document.getElementById("modalDescription");
   const modalFeatures = document.getElementById("modalFeatures");
+  const modalDemoBtn = document.getElementById("modalDemoBtn");
 
   let rotation = 0;
   let velocity = -0.018;
@@ -497,6 +569,16 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
     modalTitle.textContent = card.dataset.title || "";
     modalDescription.textContent = card.dataset.description || "";
     modalFeatures.innerHTML = "";
+
+    const demoUrl = card.dataset.demoUrl;
+
+    if (demoUrl) {
+      modalDemoBtn.href = demoUrl;
+      modalDemoBtn.classList.add("active");
+    } else {
+      modalDemoBtn.href = "#";
+      modalDemoBtn.classList.remove("active");
+    }
 
     const features = card.dataset.features || "";
 
@@ -543,7 +625,7 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
         hasMoved = true;
       }
 
-      rotation += deltaX * 0.18;
+      rotation += deltaX * 0.03;
       velocity = (deltaX / deltaTime) * 3.5;
 
       lastX = e.clientX;
@@ -594,4 +676,17 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
 
     animate();
   }
+
+  const webImages = document.querySelectorAll('.web-slider img');
+
+  let currentWebImage = 0;
+
+  setInterval(() => {
+    webImages[currentWebImage].classList.remove('active');
+
+    currentWebImage = (currentWebImage + 1) % webImages.length;
+
+    webImages[currentWebImage].classList.add('active');
+  }, 3000);
+  
 </script>
