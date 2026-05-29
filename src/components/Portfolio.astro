@@ -101,6 +101,13 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
     <span id="modalCategory"></span>
     <h3 id="modalTitle"></h3>
     <p id="modalDescription"></p>
+    <a
+      href="https://wheat-gnat-631766.hostingersite.com/"
+      target="_blank"
+      class="demo-web-btn"
+    >
+      Ver Demo del Sitio Web
+    </a>
 
     <div class="modal-features" id="modalFeatures"></div>
   </div>
@@ -412,6 +419,43 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
       border-radius: 20px;
     }
   }
+
+  .demo-web-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  margin: 24px 0;
+
+  padding: 16px 20px;
+
+  border-radius: 14px;
+
+  background: #2563eb;
+  color: #fff !important;
+
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+
+  border: none;
+
+  box-shadow:
+    0 10px 25px rgba(37,99,235,.45);
+
+  transition: all .25s ease;
+}
+
+.demo-web-btn:hover {
+  background: #3b82f6;
+  transform: translateY(-2px);
+}
+
+.demo-web-btn::before {
+  content: "";
+  margin-right: 10px;
+}
 </style>
 
 <script is:inline>
