@@ -6,8 +6,9 @@ import proyectoWeb2 from '../images/proyecto-web-2.jpg';
 import proyectoWeb3 from '../images/proyecto-web-3.jpg';
 import proyectoWeb4 from '../images/proyecto-web-4.jpg';
 import proyectoDashboard from '../images/proyecto-dashboard.jpg';
-import proyectoApp from '../images/proyecto-app.jpeg';
 import proyectoCloud from '../images/proyecto-cloud.jpg';
+import proyectoApp from '../images/proyecto-app.jpeg';
+import proyectoApp2 from '../images/proyecto-app-2.jpeg';
 ---
 
 <section id="galeria-giratoria" class="py-24 border-t border-gray-900 bg-black overflow-hidden">
@@ -109,7 +110,10 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
           data-features="Android e iOS|Diseño moderno|Notificaciones|Conexión con sistemas"
         >
           <div class="phone-preview">
-            <img src={proyectoApp.src} alt="Aplicación móvil" loading="lazy" decoding="async" />
+            <div class="app-slider">
+              <img src={proyectoApp.src} class="active app-image" alt="App 1" />
+              <img src={proyectoApp2.src} class="app-image" alt="App 2" />
+            </div>
           </div>
 
           <div class="project-overlay">
@@ -527,6 +531,58 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
 .web-slider img.active {
   opacity: 1;
 }
+
+.app-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.phone-preview .app-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 0;
+  border-radius: 30px;
+
+  opacity: 0;
+  transform: scale(1.08) translateY(10px);
+  transition:
+    opacity 1s ease,
+    transform 1.2s cubic-bezier(.22,1,.36,1);
+}
+
+.phone-preview .app-image.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+.phone-preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255,255,255,.12) 50%,
+    transparent 80%
+  );
+  pointer-events: none;
+  animation: shinePhone 5s linear infinite;
+}
+
+@keyframes shinePhone {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(120%);
+  }
+}
+
 </style>
 
 <script is:inline>
@@ -542,7 +598,7 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
   const modalDemoBtn = document.getElementById("modalDemoBtn");
 
   let rotation = 0;
-  let velocity = -0.018;
+  let velocity = -0.1;
   let isDragging = false;
   let hasMoved = false;
   let startX = 0;
@@ -555,8 +611,8 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
       rotation += velocity;
       velocity *= 0.985;
 
-      if (Math.abs(velocity) < 0.014) {
-        velocity = velocity < 0 ? -0.014 : 0.014;
+      if (Math.abs(velocity) < 0.10) {
+        velocity = velocity < 0 ? -0.10 : 0.10;
       }
     }
 
@@ -625,8 +681,8 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
         hasMoved = true;
       }
 
-      rotation += deltaX * 0.03;
-      velocity = (deltaX / deltaTime) * 3.5;
+      rotation += deltaX * 0.025;
+      velocity = (deltaX / deltaTime) * 0.8;
 
       lastX = e.clientX;
       lastTime = now;
@@ -636,9 +692,8 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
       if (!isDragging) return;
 
       isDragging = false;
-
-      if (Math.abs(velocity) > 0.7) {
-        velocity = velocity > 0 ? 0.7 : -0.7;
+      if (Math.abs(velocity) > 1.1) {
+        velocity = velocity > 0 ? 1.1 : -1.1;
       }
 
       stage.releasePointerCapture?.(e.pointerId);
@@ -689,4 +744,16 @@ import proyectoCloud from '../images/proyecto-cloud.jpg';
     webImages[currentWebImage].classList.add('active');
   }, 3000);
   
+  const appImages = document.querySelectorAll('.app-image');
+
+  let currentAppImage = 0;
+
+  setInterval(() => {
+    appImages[currentAppImage].classList.remove('active');
+
+    currentAppImage = (currentAppImage + 1) % appImages.length;
+
+    appImages[currentAppImage].classList.add('active');
+  }, 3000);
+
 </script>
